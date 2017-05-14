@@ -1,0 +1,32 @@
+shirts <br>
+
+<% @shirts.each do |x| %>
+<%= x['name'] %></a><br>
+<%= x['picture'] %></a><br>
+<%= x['s'] %></a><br>
+<%= x['m'] %></a><br>
+<%= x['l'] %></a><br>
+<%= x['xl'] %></a><br>
+<%= x['twoxl'] %></a><br>
+<%= x['threexl'] %></a><br>
+<%= x['total'] %></a><br>
+<%= x['ordered'] %></a><br>
+<%= x['event_dates_id'] %></a><br>
+<% end %>
+
+
+<form action="/shirts" method='POST'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  name  <input type="text" name="name" value="">
+ complete <input type="text" name="picture">
+ s <input type="text" name="s">
+  m <input type="text" name="m">
+  l <input type="text" name="l">
+  xl <input type="text" name="xl">
+  twoxl <input type="text" name="twoxl">
+  threexl <input type="text" name="threexl">
+  total <input type="text" name="total">
+  ordered <input type="text" name="ordered">
+  event id <input type="text" name="event_dates_id">
+    <input type="submit">
+  </form>

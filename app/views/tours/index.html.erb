@@ -1,0 +1,24 @@
+<center> <h1>tours</h1>
+
+
+<% @tours.each do |x| %>
+<a href='/tours/<%= x['id'] %>'> <%= x['name'] %></a><br></a>
+<b>ID: </b><%= x['id'] %></a><br>
+<b>complete: </b><%= x['complete'] %></a><br>
+<b>total: </b><%= x['total'] %></a><br>
+<br>
+<br>
+<% end %>
+<br>
+<br>
+
+
+
+<form action="/tours" method='POST'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  name  <input type="text" name="name" value="">
+ complete <input type="text" name="complete">
+ total <input type="text" name="total">
+  total <input type="text" name="user_id">
+    <input type="submit">
+  </form>

@@ -1,0 +1,41 @@
+<center>
+<h1>Tours Name:</h1> <%= @tour[:name] %><br>
+id: <%= @tour[:id] %><br>
+</center>
+
+<%= @tour_events %>
+
+<br>
+<form action="/events" method='POST'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  date  <input type="text" name="date" value="">
+ venue_name <input type="text" name="venue_name">
+ address <input type="text" name="address">
+  compacity <input type="text" name="compacity">
+  attendance <input type="text" name="settle">
+  total <input type="text" name="total">
+  complete <input type="text" name="complete">
+  tour_id <input type="text" name="id_of_tour" value="<%= @tour[:id] %>">
+
+    <input type="submit">
+  </form>
+<br>
+<br>
+
+<center>
+  <% @events.each do |x| %> <br>
+  <a href='/events/<%= x['id'] %>'> <%= x['date'] %></a><br></a>
+  venue_name <%= x['venue_name'] %></a><br>
+  address <%= x['address'] %></a><br>
+  compacity <%= x['compacity'] %></a><br>
+  attendance <%= x['attendance'] %></a><br>
+  settle <%= x['settle'] %></a><br>
+  total <%= x['total'] %></a><br>
+  complete <%= x['complete'] %></a><br>
+  id of tour <%= x['id_of_tour'] %></a><br>
+  <%= link_to "Remove Event", x, method: :delete %>
+  <br>
+  <% end %>
+</center>
+
+  <br>

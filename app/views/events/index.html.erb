@@ -1,0 +1,31 @@
+events
+current id <%= @tour %>
+
+<% @events.each do |x| %> <br>
+<!-- <%= x['id'] %></a><br> -->
+<a href='/events/<%= x['id'] %>'> <%= x['name'] %></a><br></a>
+<b>ID:</b> date <%= x['date'] %></a><br>
+<b>Venue Name: </b> venue_name <%= x['venue_name'] %></a><br>
+<b>Address: </b>address <%= x['address'] %></a><br>
+<b>Compacity: </b>compacity <%= x['compacity'] %></a><br>
+<b>attendance: </b>attendance <%= x['attendance'] %></a><br>
+<b>Settle: </b>settle <%= x['settle'] %></a><br>
+<b>Total: </b>total <%= x['total'] %></a><br>
+<b>Complete: </b>complete <%= x['complete'] %></a><br>
+<b>Tours Id: </b> <%= x['index_events_on_tours_id'] %></a><br>
+<% end %>
+<br>
+<br>
+
+<form action="/events" method='POST'>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+date <input type="text" name="date" value="">
+venue_name <input type="text" name="venue_name">
+address <input type="text" name="address">
+compacity <input type="text" name="compacity">
+attendance <input type="text" name="settle">
+total <input type="text" name="total">
+complete <input type="text" name="complete">
+tour_id <input type="text" name="tours_id">
+<input type="submit">
+</form>
