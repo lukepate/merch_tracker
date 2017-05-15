@@ -14,6 +14,7 @@ class ShirtsController < ApplicationController
               threexl: params[:threexl],
               total: params[:total],
               ordered: params[:ordered],
-              event_dates_id: params[:event_dates_id])
+              events_id: params[:events_id])
+    redirect_to ("/tours/#{params[:id_of_tour]}")
     end
 end

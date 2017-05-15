@@ -3,24 +3,43 @@
   <head>
     <title>MerchApp</title>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
+
   <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Logo</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">JavaScript</a></li>
+    <a href="#!" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="sass.html">search</a></li>
+      <li><a href="badges.html">view_module</a></li>
+
+        <% if user_signed_in? %>
+          <li>    Logged in as <strong><%= current_user.email %></strong></li>
+          <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <% end %>
+        </p></li>
+      <li><a href="mobile.html">
+
+      </a></li>
     </ul>
   </div>
 </nav>
 
+  <p class="navbar-text pull-right">
+
+
 
   <body>
+    
     <%= yield %>
+
+  <script type="text/javascript" src="javascript/materialize.js"></script>
   </body>
 </html>

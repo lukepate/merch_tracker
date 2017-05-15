@@ -8,9 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
-gem 'grape'
-gem 'rack-cors', :require => 'rack/cors'
-gem 'grape-active_model_serializers'
 
 gem 'devise'
 gem 'materialize-sass'

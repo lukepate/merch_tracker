@@ -1,24 +1,58 @@
-<center> <h1>tours</h1>
+<div class="container">
+<h1 class="center aligned">tours</h1>
 
 
-<% @tours.each do |x| %>
-<a href='/tours/<%= x['id'] %>'> <%= x['name'] %></a><br></a>
-<b>ID: </b><%= x['id'] %></a><br>
-<b>complete: </b><%= x['complete'] %></a><br>
-<b>total: </b><%= x['total'] %></a><br>
-<br>
-<br>
-<% end %>
-<br>
-<br>
-
-
-
+<div class="forum">
 <form action="/tours" method='POST'>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   name  <input type="text" name="name" value="">
  complete <input type="text" name="complete">
  total <input type="text" name="total">
-  total <input type="text" name="user_id">
+  <!-- user_id<input type="text" name="user_id"> -->
     <input type="submit">
   </form>
+  <a id="hidebut" class="btn-floating btn-large waves-effect waves-light red hidebutton">Close</a>
+</div>
+
+<a id="newbutton" class="btn-floating btn-large waves-effect waves-light red hidebutton">+</a>
+   <div class="shows">
+ <div class="row">
+  <% @tours.each do |x| %>
+   <div class="card col s5 offset-s1">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="http://i.imgur.com/zdfgVgK.jpgmages/office.jpg">
+    </div>
+    <div class="card-content center aligned">
+      <span class="card-title activator grey-text text-darken-4"><%= x['name'] %></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= x['name'] %></span>
+      <p><a href='/tours/<%= x['id'] %>'>View Concert Date Details</a></p><br>
+      <b>complete: </b><%= x['complete'] %></a><br>
+      <b>total: </b><%= x['total'] %></a><br><br>
+      <%= link_to "Remove Tour", x, method: :delete %>
+    </div>
+  </div>
+<% end %>
+</div>
+</div>
+
+<!-- <ul class="collapsible" data-collapsible="accordion">
+  <% @tours.each do |x| %>
+    <li>
+      <div class="collapsible-header">
+        <a href='/tours/<%= x['id'] %>'><%= x['name'] %></a>
+      </div>
+      <div class="collapsible-body">
+        <b>ID: </b><%= x['id'] %></a><br>
+        <b>complete: </b><%= x['complete'] %></a><br>
+        <b>total: </b><%= x['total'] %></a><br>
+        <span>Lorem ipsum dolor sit amet.</span>
+      </div>
+    </li>
+    <% end %>
+  </ul> -->
+
+
+
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514163822) do
+ActiveRecord::Schema.define(version: 20170515161930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,9 @@ ActiveRecord::Schema.define(version: 20170514163822) do
     t.string   "ordered"
     t.integer  "event_dates_id"
     t.string   "id_of_event"
+    t.integer  "events_id"
     t.index ["event_dates_id"], name: "index_shirts_on_event_dates_id", using: :btree
+    t.index ["events_id"], name: "index_shirts_on_events_id", using: :btree
   end
 
   create_table "tours", force: :cascade do |t|
@@ -111,5 +113,6 @@ ActiveRecord::Schema.define(version: 20170514163822) do
   add_foreign_key "event_dates", "tours", column: "tours_id"
   add_foreign_key "events", "tours", column: "tours_id"
   add_foreign_key "shirts", "event_dates", column: "event_dates_id"
+  add_foreign_key "shirts", "events", column: "events_id"
   add_foreign_key "tours", "users"
 end

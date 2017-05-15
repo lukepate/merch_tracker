@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+ body {
+			background-image: url(http://i.imgur.com/zdfgVgK.jpg) ;
+			background-position: center center;
+			background-repeat:  no-repeat;
+			background-attachment: fixed;
+			background-size:  cover;
+			background-color: #999;
+
+}
+#hidebutton{
+  display: none;
+}
+.forum{
+  display: none;
+}
+.collapsible-body{
+  background-color: #fff;
+}
+.nav-wrapper{
+  background-color: #212121;
+}
+.container{
+  background-color: #ffffff;
+}
+
+.shows{
+  left: 50%;
+}

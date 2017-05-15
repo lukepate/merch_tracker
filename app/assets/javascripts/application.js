@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
+$(document).on("click", "#newbutton", function(e){
+   $('.forum').show();
+   $('#newbutton').hide();
+   $('#hidebut').show();
+});
+
+$(document).on("click", "#hidebut", function(e){
+   $('.forum').hide();
+   $('#newbutton').show();
+});

@@ -1,3 +1,4 @@
+<div class="container">
 <center>
 <h1>Tours Name:</h1> <%= @tour[:name] %><br>
 id: <%= @tour[:id] %><br>
@@ -5,7 +6,58 @@ id: <%= @tour[:id] %><br>
 
 <%= @tour_events %>
 
-<br>
+
+<ul class="collapsible" data-collapsible="accordion">
+    <% @events.each do |x| %>
+
+    <li>
+      <div class="collapsible-header">
+        <a href='/events/<%= x['id'] %>'><%= x['date'] %></a>
+        <%= x['venue_name'] %>
+        address <%= x['address'] %>
+        compacity <%= x['compacity'] %>
+        attendance <%= x['attendance'] %>
+        settle <%= x['settle'] %>
+        total <%= x['total'] %>
+        complete <%= x['complete'] %>
+        events  <%= x['id'] %>
+        <%= link_to "Remove Event", x, method: :delete %>
+      </div>
+      <div class="collapsible-body">
+        <% @shirts.each do |y| %>
+          <% if y.events_id == x.id %>
+        shirts <%= y['events_id'] %>
+        <% end %>
+        <% end %>
+        <a id="newbutton" class="btn-floating btn-large waves-effect waves-light red hidebutton">+</a>
+
+<div class="forum">
+  <a id="hidebut" class="btn-floating btn-large waves-effect waves-light red hidebutton">Close</a>
+
+        <form action="/shirts" method='POST'>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          name  <input type="text" name="name" value="">
+         complete <input type="text" name="picture">
+         s <input type="text" name="s">
+          m <input type="text" name="m">
+          l <input type="text" name="l">
+          xl <input type="text" name="xl">
+          twoxl <input type="text" name="twoxl">
+          threexl <input type="text" name="threexl">
+          total <input type="text" name="total">
+          ordered <input type="text" name="ordered">
+          event id <input type="text" name="events_id">
+            <input type="submit">
+          </form>
+</div>
+      </div>
+
+    </li>
+
+      <% end %>
+  </ul>
+
+<div class="forum">
 <form action="/events" method='POST'>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   date  <input type="text" name="date" value="">
@@ -16,26 +68,8 @@ id: <%= @tour[:id] %><br>
   total <input type="text" name="total">
   complete <input type="text" name="complete">
   tour_id <input type="text" name="id_of_tour" value="<%= @tour[:id] %>">
-
     <input type="submit">
   </form>
-<br>
-<br>
-
-<center>
-  <% @events.each do |x| %> <br>
-  <a href='/events/<%= x['id'] %>'> <%= x['date'] %></a><br></a>
-  venue_name <%= x['venue_name'] %></a><br>
-  address <%= x['address'] %></a><br>
-  compacity <%= x['compacity'] %></a><br>
-  attendance <%= x['attendance'] %></a><br>
-  settle <%= x['settle'] %></a><br>
-  total <%= x['total'] %></a><br>
-  complete <%= x['complete'] %></a><br>
-  id of tour <%= x['id_of_tour'] %></a><br>
-  <%= link_to "Remove Event", x, method: :delete %>
-  <br>
-  <% end %>
-</center>
-
-  <br>
+</div>
+<button id="newbutton" type="submit">add a new date</button>
+</div>
