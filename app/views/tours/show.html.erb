@@ -26,7 +26,7 @@ id: <%= @tour[:id] %><br>
       <div class="collapsible-body">
         <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
-        shirts <%= y['events_id'] %>
+        !!!shirts <%= y['events_id'] %>
         <% end %>
         <% end %>
         <a id="newbutton" class="btn-floating btn-large waves-effect waves-light red hidebutton">+</a>
@@ -46,7 +46,9 @@ id: <%= @tour[:id] %><br>
           threexl <input type="text" name="threexl">
           total <input type="text" name="total">
           ordered <input type="text" name="ordered">
-          event id <input type="text" name="events_id">
+
+          event id <input type="text" name="events_id" value="<%= x['id'] %>">
+
             <input type="submit">
           </form>
 </div>
