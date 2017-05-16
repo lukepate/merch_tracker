@@ -27,3 +27,17 @@ $(document).on("click", "#hidebut", function(e){
    $('.forum').hide();
    $('#newbutton').show();
 });
+
+$(document).on("click", "#show-event", function(e){
+   $('.forum-events').show();
+   $('#newbutton').show();
+});
+
+$(document).on("click", "#new-event", function(e){
+   $('.forum-events').show();
+   $('#newbutton').show();
+});
+$(document).on("click", "#hide-event", function(e){
+   $('.forum-events').hide();
+   $('#newbutton').show();
+});

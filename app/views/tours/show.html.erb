@@ -1,10 +1,9 @@
 <div class="container">
 <center>
-<h1>Tours Name:</h1> <%= @tour[:name] %><br>
-id: <%= @tour[:id] %><br>
+<h1><%= @tour[:name] %></h1> <br>
 </center>
 
-<%= @tour_events %>
+
 
 
 <ul class="collapsible" data-collapsible="accordion">
@@ -26,52 +25,101 @@ id: <%= @tour[:id] %><br>
       <div class="collapsible-body">
         <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
-        !!!shirts <%= y['events_id'] %>
+        <%= y['events_id'] %>
+        <%= y['name'] %>
+        <%= y['picture'] %>
+        <%= y['s'] %>
+        <%= y['m'] %>
+        <%= y['l'] %>
+        <%= y['xl'] %>
+        <%= y['twoxl'] %>
+        <%= y['threexl'] %>
+        <%= link_to "Remove Shirt", x, method: :delete %>
+        <br>
         <% end %>
         <% end %>
-        <a id="newbutton" class="btn-floating btn-large waves-effect waves-light red hidebutton">+</a>
-
-<div class="forum">
-  <a id="hidebut" class="btn-floating btn-large waves-effect waves-light red hidebutton">Close</a>
+        <a id="newbutton" class="btn waves-effect waves-light black hidebutton">Add a date</a>
 
         <form action="/shirts" method='POST'>
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          name  <input type="text" name="name" value="">
-         complete <input type="text" name="picture">
-         s <input type="text" name="s">
-          m <input type="text" name="m">
-          l <input type="text" name="l">
-          xl <input type="text" name="xl">
-          twoxl <input type="text" name="twoxl">
-          threexl <input type="text" name="threexl">
-          total <input type="text" name="total">
-          ordered <input type="text" name="ordered">
-
-          event id <input type="text" name="events_id" value="<%= x['id'] %>">
-
-            <input type="submit">
-          </form>
-</div>
-      </div>
-
-    </li>
-
-      <% end %>
-  </ul>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
 <div class="forum">
-<form action="/events" method='POST'>
+  <form action="/shirts" method='POST'>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  date  <input type="text" name="date" value="">
- venue_name <input type="text" name="venue_name">
- address <input type="text" name="address">
-  compacity <input type="text" name="compacity">
-  attendance <input type="text" name="settle">
-  total <input type="text" name="total">
-  complete <input type="text" name="complete">
-  tour_id <input type="text" name="id_of_tour" value="<%= @tour[:id] %>">
-    <input type="submit">
-  </form>
-</div>
-<button id="newbutton" type="submit">add a new date</button>
+      <div class="forum-container">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input id="icon_prefix" type="text" class="validate" name="picture" >
+                <label for="icon_prefix">Picture</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="icon_telephone" type="text" class="name">
+                <label for="icon_telephone">Shirt</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="icon_telephone" type="text" class="total">
+                <label for="icon_telephone">Total</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s2">
+                <input id="icon_prefix" type="text" class="validate" name="s">
+                <label for="icon_prefix">Small</label>
+              </div>
+              <div class="input-field col s2">
+                <input id="icon_telephone" type="tel" class="validate" name="m">
+                <label for="icon_telephone">Medium</label>
+              </div>
+              <div class="input-field col s2">
+                <input id="icon_telephone" type="tel" class="validate" name="l">
+                <label for="icon_telephone">Large</label>
+              </div>
+              <div class="input-field col s2">
+                <input id="icon_prefix" type="text" class="validate" name="xl">
+                <label for="icon_prefix">XL</label>
+              </div>
+              <div class="input-field col s2">
+                <input id="icon_telephone" type="tel" class="validate" name="twoxl">
+                <label for="icon_telephone">2XL</label>
+              </div>
+              <div class="input-field col s2">
+                <input id="icon_telephone" type="tel" class="validate" name="threexl">
+                <label for="icon_telephone">3XL</label>
+                <input type="hidden" name="events_id" value="<%= x['id'] %>">
+                <input class="submit-event btn waves-effect waves-light black hidebutton" type="submit">
+                <a id="hidebut" class="btn waves-effect waves-light black hidebutton">X</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+
+  <a id="new-event" class="btn waves-effect waves-light black hidebutton">New Event</a>
+
+  <div class="forum-events">
+    <form action="/events" method='POST'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="forum-container">
+        <div class="row">
+          date  <input type="text" name="date" value="">
+          venue_name <input type="text" name="venue_name">
+          address <input type="text" name="address">
+          compacity <input type="text" name="compacity">
+          attendance <input type="text" name="settle">
+          total <input type="text" name="total">
+          complete <input type="text" name="complete">
+          tour_id <input type="hidden" name="id_of_tour" value="<%= @tour[:id] %>">
+          <input type="submit">
+        </div>
+      </div>
+    </form>
+    <a id="hide-event" class="btn waves-effect waves-light black hidebutton">Cancel Event</a>
+  </div>
 </div>
