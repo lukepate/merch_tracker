@@ -22,8 +22,12 @@
 			background-color: #999;
 
 }
+h8{
+  font-size: 20px;
+}
 #hidebutton{
   display: none;
+  position: absolute;
 }
 
 .forum{
@@ -33,6 +37,9 @@
 .forum-events{
   display: none;
   margin-left: 30%;
+}
+.forum-tours{
+  display: none;
 }
 .forum-container{
 }
@@ -46,11 +53,34 @@
   background-color: #ffffff;
 }
 .shows{
-  left: 50%;
+  width: 75%;
+  margin-left: 100px;
 }
 .forum-container{
   width: 50%;
+
 }
 .submit-event{
   margin-left: -200px;
 }
+.venue-name{
+  font-size: 25px;
+}
+.merch-container{
+  margin-left: 200px;
+}
+.logo{
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 699px) and (min-width: 220px) {
+    h2 {
+        font-size: 36px;
+    }
+    .venue-name{
+        font-size: 20px;
+    }
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */

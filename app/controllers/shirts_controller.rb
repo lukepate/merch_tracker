@@ -15,6 +15,6 @@ class ShirtsController < ApplicationController
               total: params[:total],
               ordered: params[:ordered],
               events_id: params[:events_id])
-    redirect_to ("/tours/#{params[:id_of_tour]}")
+              redirect_to ("/tours/#{params[:id_of_tour]}")
     end
 end

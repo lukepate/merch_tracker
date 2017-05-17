@@ -1,44 +1,50 @@
+
 <div class="container">
+
 <center>
 <h1><%= @tour[:name] %></h1> <br>
 </center>
-
-
-
-
 <ul class="collapsible" data-collapsible="accordion">
     <% @events.each do |x| %>
-
     <li>
       <div class="collapsible-header">
-        <a href='/events/<%= x['id'] %>'><%= x['date'] %></a>
-        <%= x['venue_name'] %>
-        address <%= x['address'] %>
-        compacity <%= x['compacity'] %>
-        attendance <%= x['attendance'] %>
-        settle <%= x['settle'] %>
-        total <%= x['total'] %>
-        complete <%= x['complete'] %>
-        events  <%= x['id'] %>
-        <%= link_to "Remove Event", x, method: :delete %>
+        <div class="row">
+        <div class="col s4">
+          <h2><%= x['date'] %></a></h2>
+          <!-- compacity <%= x['compacity'] %> -->
+        </div>
+        <div class="col s4">
+          <br>
+          <h6><span class="venue-name"><%= x['venue_name'] %></span><br>
+          address <%= x['address'] %></h6>
+        </div>
+        <div class="col s4">
+           <br>
+           <h6>attendance <%= x['attendance'] %><br>
+           settle <%= x['settle'] %><br>
+           total <%= x['total'] %>
+           <%= link_to "Remove Event", x, method: :delete %></h6>
+        </div>
+        </div>
       </div>
       <div class="collapsible-body">
+        <div class="merch-container"
         <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
-        <%= y['events_id'] %>
-        <%= y['name'] %>
+        <h8><%= y['name'] %>
         <%= y['picture'] %>
         <%= y['s'] %>
         <%= y['m'] %>
         <%= y['l'] %>
         <%= y['xl'] %>
         <%= y['twoxl'] %>
-        <%= y['threexl'] %>
+        <%= y['threexl'] %></h8>
         <%= link_to "Remove Shirt", x, method: :delete %>
         <br>
         <% end %>
         <% end %>
-        <a id="newbutton" class="btn waves-effect waves-light black hidebutton">Add a date</a>
+      </div>
+      <a id="newbutton" class="btn waves-effect waves-light black hidebutton">Add merch</a>
 
         <form action="/shirts" method='POST'>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -102,20 +108,19 @@
   </ul>
 
   <a id="new-event" class="btn waves-effect waves-light black hidebutton">New Event</a>
-
   <div class="forum-events">
     <form action="/events" method='POST'>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <div class="forum-container">
         <div class="row">
-          date  <input type="text" name="date" value="">
-          venue_name <input type="text" name="venue_name">
-          address <input type="text" name="address">
-          compacity <input type="text" name="compacity">
-          attendance <input type="text" name="settle">
-          total <input type="text" name="total">
-          complete <input type="text" name="complete">
-          tour_id <input type="hidden" name="id_of_tour" value="<%= @tour[:id] %>">
+          <b>Date</b>  <input type="text" name="date" value="">
+          <b>Venue Name</b> <input type="text" name="venue_name">
+          <b>Address</b> <input type="text" name="address">
+          <b>Capacity</b> <input type="text" name="compacity">
+          <b>Attendance</b> <input type="text" name="settle">
+          <b>Total</b> <input type="text" name="total">
+          <b>Complete</b> <input type="text" name="complete">
+          <input type="hidden" name="id_of_tour" value="<%= @tour[:id] %>">
           <input type="submit">
         </div>
       </div>

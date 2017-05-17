@@ -15,17 +15,27 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
-  $('.collapsible').collapsible();
+
+
+$(document).on("click", "#newbutton", function(e){
+   $('.forum-tours').show();
+   $('#newbutton').hide();
+   $('#hidebut').show();
+});
+
+$(document).on("click", "#hidebut", function(e){
+   $('.forum-tours').hide();
+   $('#newbutton').show();
 });
 $(document).on("click", "#newbutton", function(e){
    $('.forum').show();
    $('#newbutton').hide();
    $('#hidebut').show();
 });
-
 $(document).on("click", "#hidebut", function(e){
    $('.forum').hide();
    $('#newbutton').show();
+   $('#hidebut').hide();
 });
 
 $(document).on("click", "#show-event", function(e){
@@ -40,4 +50,7 @@ $(document).on("click", "#new-event", function(e){
 $(document).on("click", "#hide-event", function(e){
    $('.forum-events').hide();
    $('#newbutton').show();
+
+});
+  $('.collapsible').collapsible();
 });

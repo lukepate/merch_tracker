@@ -1,39 +1,38 @@
 <div class="container">
-<h1 class="center aligned">tours</h1>
+<h1 class="center aligned">Tours</h1>
 
-
-<div class="forum">
-<form action="/tours" method='POST'>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  name  <input type="text" name="name" value="">
- complete <input type="text" name="complete">
- total <input type="text" name="total">
-  <!-- user_id<input type="text" name="user_id"> -->
-    <input type="submit">
-  </form>
-  <a id="hidebut" class="btn-floating btn-large waves-effect waves-light red hidebutton">Close</a>
-</div>
-
-<a id="newbutton" class="btn-floating btn-large waves-effect waves-light red hidebutton">+</a>
-   <div class="shows">
+<div class="shows">
  <div class="row">
   <% @tours.each do |x| %>
    <div class="card col s5 offset-s1">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="http://i.imgur.com/zdfgVgK.jpgmages/office.jpg">
+      <img class="activator" src="http://i.imgur.com/rHLjFPk.jpg" >
     </div>
     <div class="card-content center aligned">
       <span class="card-title activator grey-text text-darken-4"><%= x['name'] %></span>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><%= x['name'] %></span>
-      <p><a href='/tours/<%= x['id'] %>'>View Concert Date Details</a></p><br>
-      <b>complete: </b><%= x['complete'] %></a><br>
-      <b>total: </b><%= x['total'] %></a><br><br>
+      <p><a href="/tours/<%= x['id'] %>" target="/tours/<%= x['id'] %>">View Concert Date Details</a></p><br>
+      <b>Details </b><%= x['complete'] %><br>
+      <img src="<%=x['images']%>">
+      <br><br>
       <%= link_to "Remove Tour", x, method: :delete %>
     </div>
   </div>
 <% end %>
+</div>
+<a id="newbutton" class="btn waves-effect waves-light black hidebutton">+</a>
+<div class="forum-tours">
+<form action="/tours" method='POST'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  name  <input type="text" name="name" value="">
+ Details: <input type="text" name="complete">
+ Image: <input type="text" name="images">
+  <!-- user_id<input type="text" name="user_id"> -->
+    <input type="submit">
+  </form>
+  <a id="hidebut" class="btn waves-effect waves-light black hidebutton">Close</a>
 </div>
 </div>
 

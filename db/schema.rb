@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515161930) do
+ActiveRecord::Schema.define(version: 20170517184841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20170515161930) do
     t.string   "complete"
     t.integer  "total"
     t.integer  "user_id"
+    t.string   "images"
     t.index ["user_id"], name: "index_tours_on_user_id", using: :btree
   end
 
