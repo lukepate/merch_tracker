@@ -20,9 +20,8 @@
         </div>
         <div class="col s4">
            <br>
-           <h6>attendance <%= x['attendance'] %><br>
-           settle <%= x['settle'] %><br>
-           total <%= x['total'] %>
+           <h6>attendance <%= x['settle'] %><br>
+           total <%= x['total'] %><br>
            <%= link_to "Remove Event", x, method: :delete %></h6>
         </div>
         </div>
@@ -31,15 +30,15 @@
         <div class="merch-container"
         <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
-        <h8><%= y['name'] %>
-        <%= y['picture'] %>
-        <%= y['s'] %>
-        <%= y['m'] %>
-        <%= y['l'] %>
-        <%= y['xl'] %>
-        <%= y['twoxl'] %>
-        <%= y['threexl'] %></h8>
-        <%= link_to "Remove Shirt", x, method: :delete %>
+        <h6><%= y['picture'] %><br>
+
+        <b>Small's:</b> <%= y['s'] %>
+        <b>Mediums's </b><%= y['m'] %>
+        <b>Large </b><%= y['l'] %>
+        <b> XL </b><%= y['xl'] %>
+        <b> 2XL </b><%= y['twoxl'] %>
+        <%= y['threexl'] %></h6>
+        <!-- <%= link_to "Remove Shirt", x, method: :delete %> -->
         <br>
         <% end %>
         <% end %>
@@ -58,12 +57,12 @@
             <div class="row">
               <div class="input-field col s4">
                 <input id="icon_prefix" type="text" class="validate" name="picture" >
-                <label for="icon_prefix">Picture</label>
+                <label for="icon_prefix">Name of Shirt</label>
               </div>
-              <div class="input-field col s4">
+              <!-- <div class="input-field col s4">
                 <input id="icon_telephone" type="text" class="name">
                 <label for="icon_telephone">Shirt</label>
-              </div>
+              </div> -->
               <div class="input-field col s4">
                 <input id="icon_telephone" type="text" class="total">
                 <label for="icon_telephone">Total</label>

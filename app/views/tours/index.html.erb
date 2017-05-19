@@ -6,7 +6,7 @@
   <% @tours.each do |x| %>
    <div class="card col s5 offset-s1">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="http://i.imgur.com/rHLjFPk.jpg" >
+      <img class="activator" src="<%=x['images']%>" >
     </div>
     <div class="card-content center aligned">
       <span class="card-title activator grey-text text-darken-4"><%= x['name'] %></span>
@@ -15,7 +15,6 @@
       <span class="card-title grey-text text-darken-4"><%= x['name'] %></span>
       <p><a href="/tours/<%= x['id'] %>" target="/tours/<%= x['id'] %>">View Concert Date Details</a></p><br>
       <b>Details </b><%= x['complete'] %><br>
-      <img src="<%=x['images']%>">
       <br><br>
       <%= link_to "Remove Tour", x, method: :delete %>
     </div>
@@ -29,28 +28,12 @@
   name  <input type="text" name="name" value="">
  Details: <input type="text" name="complete">
  Image: <input type="text" name="images">
-  <!-- user_id<input type="text" name="user_id"> -->
-    <input type="submit">
+    <input class="btn waves-effect waves-light black hidebutton" type="submit">
   </form>
   <a id="hidebut" class="btn waves-effect waves-light black hidebutton">Close</a>
 </div>
 </div>
 
-<!-- <ul class="collapsible" data-collapsible="accordion">
-  <% @tours.each do |x| %>
-    <li>
-      <div class="collapsible-header">
-        <a href='/tours/<%= x['id'] %>'><%= x['name'] %></a>
-      </div>
-      <div class="collapsible-body">
-        <b>ID: </b><%= x['id'] %></a><br>
-        <b>complete: </b><%= x['complete'] %></a><br>
-        <b>total: </b><%= x['total'] %></a><br>
-        <span>Lorem ipsum dolor sit amet.</span>
-      </div>
-    </li>
-    <% end %>
-  </ul> -->
 
 
 

@@ -21,6 +21,7 @@ class ToursController < ApplicationController
     Tour.create(name: params[:name],
               complete: params[:complete],
               total: params[:total],
+              images: params[:images],
               user_id: current_user.id)
     redirect_to ("/tours")
   end
