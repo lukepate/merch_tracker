@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.0.3'
 
 gem 'devise'
-
+gem 'rails_12factor'
 gem 'materialize-sass'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
