@@ -31,7 +31,6 @@
         <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
         <h6><%= y['picture'] %><br>
-
         <b>Small's:</b> <%= y['s'] %>
         <b>Mediums's </b><%= y['m'] %>
         <b>Large </b><%= y['l'] %>
@@ -42,6 +41,9 @@
         <br>
         <% end %>
         <% end %>
+
+
+
       </div>
       <a id="newbutton" class="btn waves-effect waves-light black hidebutton">Add merch</a>
 
@@ -64,7 +66,7 @@
                 <label for="icon_telephone">Shirt</label>
               </div> -->
               <div class="input-field col s4">
-                <input id="icon_telephone" type="text" class="total">
+                <input id="icon_telephone" type="text" class="total" name="total">
                 <label for="icon_telephone">Total</label>
               </div>
             </div>

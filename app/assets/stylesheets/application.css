@@ -22,6 +22,9 @@
 			background-color: #999;
 
 }
+h1{
+  font-family: 'Roboto', sans-serif;
+}
 h8{
   font-size: 20px;
 }
@@ -71,6 +74,11 @@ h8{
 }
 .logo{
   margin-left: 20px;
+}
+.shirt-container{
+  border: solid;
+  border-width: 1px;
+
 }
 
 @media screen and (max-width: 699px) and (min-width: 220px) {
