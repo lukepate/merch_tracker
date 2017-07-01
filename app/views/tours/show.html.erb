@@ -30,14 +30,15 @@
         <div class="merch-container"
         <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
-        <h6><%= y['picture'] %><br>
+        <h6><b><%= y['picture'] %></b>
         <b>Small's:</b> <%= y['s'] %>
         <b>Mediums's </b><%= y['m'] %>
         <b>Large </b><%= y['l'] %>
         <b> XL </b><%= y['xl'] %>
         <b> 2XL </b><%= y['twoxl'] %>
+        <b>total</b> <%= y['twoxl'].to_i + y['s'].to_i %>
         <%= y['threexl'] %></h6>
-        <!-- <%= link_to "Remove Shirt", x, method: :delete %> -->
+        <%= link_to "Remove Shirt", x, method: :delete %>
         <br>
         <% end %>
         <% end %>

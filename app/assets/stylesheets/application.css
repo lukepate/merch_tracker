@@ -14,16 +14,20 @@
  *= require_self
  */
  body {
-			background-image: url(http://i.imgur.com/zdfgVgK.jpg) ;
-			background-position: center center;
-			background-repeat:  no-repeat;
-			background-attachment: fixed;
-			background-size:  cover;
-			background-color: #999;
+	background-image: url(http://i.imgur.com/zdfgVgK.jpg) ;
+	background-position: center center;
+	background-repeat:  no-repeat;
+	background-attachment: fixed;
+	background-size:  cover;
+	background-color: #999;
 
 }
 h1{
   font-family: 'Roboto', sans-serif;
+}
+h2{
+  text-align: center;
+  color: white;
 }
 h8{
   font-size: 20px;
@@ -31,6 +35,17 @@ h8{
 #hidebutton{
   display: none;
   position: absolute;
+}
+.login-container{
+  text-align: center;
+  width: 50%;
+  float: center;
+  margin-left: 25%;
+  background-color: #212121;
+  border: 2px solid;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.3)
+
 }
 
 .forum{
