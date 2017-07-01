@@ -97,8 +97,10 @@
                 <input id="icon_telephone" type="tel" class="validate" name="threexl">
                 <label for="icon_telephone">3XL</label>
                 <input type="hidden" name="events_id" value="<%= x['id'] %>">
-                <input class="submit-event btn waves-effect waves-light black hidebutton" type="submit">
-                <a id="hidebut" class="btn waves-effect waves-light black hidebutton">X</a>
+                <div class="row">
+                  <input class="submit-event btn waves-effect waves-light black hidebutton" type="submit">
+                  <a id="hidebut" class="btn waves-effect waves-light black hidebutton">X</a>
+                </div>
               </div>
             </div>
           </form>
@@ -122,11 +124,13 @@
           <b>Attendance</b> <input type="text" name="settle">
           <b>Total</b> <input type="text" name="total">
           <b>Complete</b> <input type="text" name="complete">
-          <input type="hidden" name="id_of_tour" value="<%= @tour[:id] %>">
-          <input type="submit">
+          <div class="row">
+            <input type="hidden" name="id_of_tour" value="<%= @tour[:id] %>">
+            <input class="btn waves-effect waves-light black hidebutton" type="submit">
+            <a id="hide-event" class="btn waves-effect waves-light black hidebutton">Cancel Event</a>
+          </div>
         </div>
       </div>
     </form>
-    <a id="hide-event" class="btn waves-effect waves-light black hidebutton">Cancel Event</a>
   </div>
 </div>

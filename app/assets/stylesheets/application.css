@@ -47,7 +47,6 @@ h8{
   background: rgba(0, 0, 0, 0.3)
 
 }
-
 .forum{
   display: none;
   margin-left: 30%;
@@ -60,6 +59,8 @@ h8{
   display: none;
 }
 .forum-container{
+  border: solid thin;
+  padding: 30px;
 }
 .collapsible-body{
   background-color: #fff;
