@@ -2,7 +2,7 @@
 <div class="container">
 
 <center>
-<h1><%= @tour[:name] %></h1> <br>
+<h1 class="button-pad"><%= @tour[:name] %></h1> <br>
 </center>
 <ul class="collapsible" data-collapsible="accordion">
     <% @events.each do |x| %>
@@ -16,12 +16,12 @@
         <div class="col s4">
           <br>
           <h6><span class="venue-name"><%= x['venue_name'] %></span><br>
-          address <%= x['address'] %></h6>
+          <%= x['address'] %></h6>
         </div>
         <div class="col s4">
            <br>
-           <h6>attendance <%= x['settle'] %><br>
-           total <%= x['total'] %><br>
+           <h6>ATTENDANCE: <%= x['settle'] %><br>
+            TOTAL SELLS <%= x['total'] %><br>
            <%= link_to "Remove Event", x, method: :delete %></h6>
         </div>
         </div>
@@ -46,8 +46,9 @@
 
 
       </div>
-      <a id="newbutton" class="btn waves-effect waves-light black hidebutton">Add merch</a>
-
+      <div class="center aligned button-pad">
+        <a id="newbutton" class="btn waves-effect waves-light black hidebutton ">Add merch</a>
+      </div>
         <form action="/shirts" method='POST'>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
@@ -72,18 +73,19 @@
               </div>
             </div>
 
+            <div class="center aligned button-pad">
             <div class="row">
               <div class="input-field col s2">
                 <input id="icon_prefix" type="text" class="validate" name="s">
-                <label for="icon_prefix">Small</label>
+                <label for="icon_prefix">S</label>
               </div>
               <div class="input-field col s2">
                 <input id="icon_telephone" type="tel" class="validate" name="m">
-                <label for="icon_telephone">Medium</label>
+                <label for="icon_telephone">M</label>
               </div>
               <div class="input-field col s2">
                 <input id="icon_telephone" type="tel" class="validate" name="l">
-                <label for="icon_telephone">Large</label>
+                <label for="icon_telephone">L</label>
               </div>
               <div class="input-field col s2">
                 <input id="icon_prefix" type="text" class="validate" name="xl">
@@ -101,21 +103,23 @@
                   <input class="submit-event btn waves-effect waves-light black hidebutton" type="submit">
                   <a id="hidebut" class="btn waves-effect waves-light black hidebutton">X</a>
                 </div>
-              </div>
             </div>
+          </div>
           </form>
         </div>
+      </div>
       </div>
       </div>
     </li>
     <% end %>
   </ul>
-
+<div class="center aligned button-pad">
   <a id="new-event" class="btn waves-effect waves-light black hidebutton">New Event</a>
   <div class="forum-events">
     <form action="/events" method='POST'>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <div class="forum-container">
+        <h3>Add A Date </h3>
         <div class="row">
           <b>Date</b>  <input type="text" name="date" value="">
           <b>Venue Name</b> <input type="text" name="venue_name">
@@ -127,10 +131,11 @@
           <div class="row">
             <input type="hidden" name="id_of_tour" value="<%= @tour[:id] %>">
             <input class="btn waves-effect waves-light black hidebutton" type="submit">
-            <a id="hide-event" class="btn waves-effect waves-light black hidebutton">Cancel Event</a>
+            <a id="hide-event" class="btn waves-effect waves-light black hidebutton">Cancel</a>
           </div>
         </div>
       </div>
     </form>
+  </div>
   </div>
 </div>

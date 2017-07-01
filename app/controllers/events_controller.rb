@@ -24,5 +24,6 @@ class EventsController < ApplicationController
     end
     def destroy
       Event.destroy(params[:id])
+      redirect_to ("/tours/#{params[:id_of_tour]}")
     end
 end

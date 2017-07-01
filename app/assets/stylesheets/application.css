@@ -27,7 +27,7 @@ h1{
 }
 h2{
   text-align: center;
-  color: white;
+  color: black;
 }
 h8{
   font-size: 20px;
@@ -36,16 +36,34 @@ h8{
   display: none;
   position: absolute;
 }
+.#newbutton{
+  text-align: center;
+}
+.card-size{
+  width: 400px;
+  height: 500px;
+}
+.image{
+  width: 300px;
+  height: 400px;
+}
+.button-pad{
+  padding: 20px;
+  /*margin-left: 50px;*/
+}
 .login-container{
   text-align: center;
   width: 50%;
   float: center;
   margin-left: 25%;
-  background-color: #212121;
+  background-color: #fff;
   border: 2px solid;
-  border-radius: 25px;
-  background: rgba(0, 0, 0, 0.3)
-
+  border-radius: 5px;
+  padding: 40px;
+}
+.tours-text-container{
+  padding: 20px;
+  margin-left: -50px;
 }
 .forum{
   display: none;
@@ -53,7 +71,8 @@ h8{
 }
 .forum-events{
   display: none;
-  margin-left: 30%;
+  padding: 20px;
+  width: 198%;
 }
 .forum-tours{
   display: none;
@@ -86,7 +105,8 @@ h8{
   font-size: 25px;
 }
 .merch-container{
-  margin-left: 200px;
+  /*margin-left: 200px;*/
+
 }
 .logo{
   margin-left: 20px;
