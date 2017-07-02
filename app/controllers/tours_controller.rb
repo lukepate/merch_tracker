@@ -10,6 +10,8 @@ class ToursController < ApplicationController
     @tour = Tour.find_by(id: params[:id])
     @tour_id = params[:id]
     @events = Event.where(id_of_tour: @tour_id)
+
+    
     # @current_event = Event.where(id: )
     # @merch = Shirt.where(events_id: @current_event.id)
 

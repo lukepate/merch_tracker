@@ -1,17 +1,15 @@
 
 <div class="container">
+  <h1 class="center aligned button-pad"><%= @tour[:name] %></h1> <br>
 
-<center>
-<h1 class="button-pad"><%= @tour[:name] %></h1> <br>
-</center>
-<ul class="collapsible" data-collapsible="accordion">
-    <% @events.each do |x| %>
-    <li>
-      <div class="collapsible-header">
+    <ul class="collapsible" data-collapsible="accordion">
+      <% @events.each do |x| %>
+        <li>
+          <div class="collapsible-header">
         <div class="row">
         <div class="col s4">
           <h2><%= x['date'] %></a></h2>
-          <!-- compacity <%= x['compacity'] %> -->
+
         </div>
         <div class="col s4">
           <br>
@@ -23,7 +21,8 @@
            <h6>ATTENDANCE: <%= x['settle'] %><br>
                <% @shirts.each do |z| %>
                  <% if z.events_id == x.id %>
-            TOTAL SELLS <%= z['s'].to_i + z['m'].to_i + z['l'].to_i + z['xl'].to_i + z['2xl'].to_i + z['3xl'].to_i %><br>
+                         compacity <%= x['compacity'] %>
+            <!-- TOTAL SELLS <%= z['s'].to_i %><br> -->
                 <% end %>
                     <% end %>
            <%= link_to "Remove Event", x, method: :delete %></h6>
@@ -31,35 +30,29 @@
         </div>
       </div>
       <div class="collapsible-body">
-        <div class="merch-container"
+        <div class="merch-container">
           <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
-
           <div class="row">
           <img class="icon" src="<%=y['picture']%>">
           <div class="shirt-column">
-
-        <b>Small's:</b> <%= y['s'] %>
-        <b>Mediums's </b><%= y['m'] %>
-        <b>Large </b><%= y['l'] %>
-        <b> XL </b><%= y['xl'] %>
-        <b> 2XL </b><%= y['twoxl'] %>
-        <b> 3XL </b> <%= y['threexl'] %>
-        <b> total attendance</b> <%= y['total'] %>
-        <b>total</b> <%= y['s'].to_i + y['m'].to_i + y['l'].to_i + y['xl'].to_i + y['2xl'].to_i + y['3xl'].to_i  %>
-          <%= link_to "Remove Shirt", x, method: :delete %>
+            <b>Small's:</b> <%= y['s'] %>
+            <b>Mediums's </b><%= y['m'] %>
+            <b>Large </b><%= y['l'] %>
+            <b> XL </b><%= y['xl'] %>
+            <b> 2XL </b><%= y['twoxl'] %>
+            <b> 3XL </b> <%= y['threexl'] %>
+            <b> total attendance</b> <%= y['total'] %>
+            <b>total</b> <%= y['s'].to_i + y['m'].to_i + y['l'].to_i + y['xl'].to_i + y['2xl'].to_i + y['3xl'].to_i  %>
+            <%= link_to "Remove Shirt", x, method: :delete %>
             <div class="shirt-column">
+              <b>Name</b> <%= y['name'] %>
 
-
-            <div class="shirt-column">
-        <b>Name</b> <%= y['name'] %>
-
-            <% end %>
-            <% end %>
-      </div>
-              </div>
-
-      </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
       <div class="center aligned button-pad">
         <a id="newbutton" class="btn waves-effect waves-light black hidebutton ">Add merch</a>
       </div>
