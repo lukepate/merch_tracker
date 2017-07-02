@@ -21,29 +21,43 @@
         <div class="col s4">
            <br>
            <h6>ATTENDANCE: <%= x['settle'] %><br>
-            TOTAL SELLS <%= x['total'] %><br>
+               <% @shirts.each do |z| %>
+                 <% if z.events_id == x.id %>
+            TOTAL SELLS <%= z['s'].to_i + z['m'].to_i + z['l'].to_i + z['xl'].to_i + z['2xl'].to_i + z['3xl'].to_i %><br>
+                <% end %>
+                    <% end %>
            <%= link_to "Remove Event", x, method: :delete %></h6>
         </div>
         </div>
       </div>
       <div class="collapsible-body">
         <div class="merch-container"
-        <% @shirts.each do |y| %>
+          <% @shirts.each do |y| %>
           <% if y.events_id == x.id %>
-        <h6><b><%= y['picture'] %></b>
+
+          <div class="row">
+          <img class="icon" src="<%=y['picture']%>">
+          <div class="shirt-column">
+
         <b>Small's:</b> <%= y['s'] %>
         <b>Mediums's </b><%= y['m'] %>
         <b>Large </b><%= y['l'] %>
         <b> XL </b><%= y['xl'] %>
         <b> 2XL </b><%= y['twoxl'] %>
-        <b>total</b> <%= y['twoxl'].to_i + y['s'].to_i %>
-        <%= y['threexl'] %></h6>
-        <%= link_to "Remove Shirt", x, method: :delete %>
-        <br>
-        <% end %>
-        <% end %>
+        <b> 3XL </b> <%= y['threexl'] %>
+        <b> total attendance</b> <%= y['total'] %>
+        <b>total</b> <%= y['s'].to_i + y['m'].to_i + y['l'].to_i + y['xl'].to_i + y['2xl'].to_i + y['3xl'].to_i  %>
+          <%= link_to "Remove Shirt", x, method: :delete %>
+            <div class="shirt-column">
 
 
+            <div class="shirt-column">
+        <b>Name</b> <%= y['name'] %>
+
+            <% end %>
+            <% end %>
+      </div>
+              </div>
 
       </div>
       <div class="center aligned button-pad">
@@ -59,20 +73,31 @@
         <div class="row">
           <form class="col s12">
             <div class="row">
-              <div class="input-field col s4">
-                <input id="icon_prefix" type="text" class="validate" name="picture" >
-                <label for="icon_prefix">Name of Shirt</label>
-              </div>
-              <!-- <div class="input-field col s4">
-                <input id="icon_telephone" type="text" class="name">
-                <label for="icon_telephone">Shirt</label>
-              </div> -->
-              <div class="input-field col s4">
-                <input id="icon_telephone" type="text" class="total" name="total">
-                <label for="icon_telephone">Total</label>
-              </div>
+            <div class="input-field col s4">
+              <input id="icon_telephone" type="text" class="Name">
+              <label for="icon_telephone">Shirt Name</label>
+            </div>
+            <div class="input-field col s8">
+              <input id="icon_prefix" type="text" class="validate" name="picture">
+              <label for="icon_telephone">Shirt Image</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="icon_prefix" type="text" class="validate" name="">
+              <label for="icon_prefix">Name of Shirt</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="icon_telephone" type="text" class="name">
+              <label for="icon_telephone">Shirt</label>
             </div>
 
+            <div class="input-field col s4">
+              <input id="icon_telephone" type="text" class="total" name="total">
+              <label for="icon_telephone">Total</label>
+            </div>
+          </div>
             <div class="center aligned button-pad">
             <div class="row">
               <div class="input-field col s2">
@@ -99,14 +124,14 @@
                 <input id="icon_telephone" type="tel" class="validate" name="threexl">
                 <label for="icon_telephone">3XL</label>
                 <input type="hidden" name="events_id" value="<%= x['id'] %>">
-                <div class="row">
-                  <input class="submit-event btn waves-effect waves-light black hidebutton" type="submit">
-                  <a id="hidebut" class="btn waves-effect waves-light black hidebutton">X</a>
-                </div>
+              <div class="center aligned button-pad">
+                <input class="submit-event btn waves-effect waves-light black hidebutton" type="submit">
+                <a id="hidebut" class="btn waves-effect waves-light black hidebutton">X</a>
+              </div>
             </div>
           </div>
-          </form>
-        </div>
+        </form>
+      </div>
       </div>
       </div>
       </div>

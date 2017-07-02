@@ -85,7 +85,11 @@ h8{
   background-color: #fff;
 }
 .nav-wrapper{
-  background-color: #212121;
+  background-color: transparent !important;
+}
+nav{
+  background-color: transparent !important;
+  border: none;
 }
 .container{
   background-color: #ffffff;
@@ -96,7 +100,10 @@ h8{
 }
 .forum-container{
   width: 50%;
-
+}
+.icon{
+  width: 100px;
+  height: 100px;
 }
 .submit-event{
   margin-left: -200px;
@@ -106,16 +113,21 @@ h8{
 }
 .merch-container{
   /*margin-left: 200px;*/
-
+  border-bottom: solid;
+  border-width: 1px;
+  width: 100%;
+  padding: 20px;
 }
 .logo{
   margin-left: 20px;
 }
-.shirt-container{
-  border: solid;
-  border-width: 1px;
+.shirt-column{
+  text-align: center;
+  padding: 20px;
+  margin-top: -60px;
 
 }
+
 
 @media screen and (max-width: 699px) and (min-width: 220px) {
     h2 {
