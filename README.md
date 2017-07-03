@@ -6,7 +6,7 @@ Merch Tracker is a mobile reponsive app that allows artist and musicians to sign
 Ruby version 2.3.2
 Rails version 5.0
 
-##Gems used: User Authentication
+##User Authentication
 gem 'devise'
 
 ##Styling 
@@ -17,3 +17,6 @@ gem 'rspec-rails'
 gem 'byebug'
 
 ##Heroku This project is hosted on Heroku, <a href="##Heroku This project is hosted on Heroku, here"> Here</a>
+You can test the app with:
+Username: test@test.com
+PW: password
