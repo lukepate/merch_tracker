@@ -1,5 +1,5 @@
 
-Merch Tracker is a mobile reponsive app that allows artist and musicians to sign up, log in and catalog tours. Artist can seamlessly track merchandise sells, settlements and any other details for each individual date while also creating an archive of cities, venues and concert information. 
+Merch Tracker is a mobile reponsive app that allows artist and musicians to sign up, log in and archive tours. Artist can seamlessly track merchandise sells, settlements and any other details for each individual date.
 
 <h2> Getting Started </h2>
 
