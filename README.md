@@ -18,12 +18,15 @@ Add a tour
 
 <img src="http://i.imgur.com/ZPgF40x.png">
 
-Nagivate to tour
-
-<img src="http://i.imgur.com/ZPgF40x.png">
-
+Nagivate to and add dates
 
 <img src="http://i.imgur.com/OcATK3h.png">
+
+Select tour date and add merchandise sells
+
+<img src="http://i.imgur.com/10Oskwy.png">
+
+
 ##Versions:
 Ruby version 2.3.2
 Rails version 5.0
