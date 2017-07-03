@@ -28,7 +28,7 @@ Select tour date and add merchandise sells
 
 
 <h2> Versions </h2>
-Ruby version 2.3.2<br>
+Ruby version 2.3.2 
 Rails version 5.0
 
 <h2> User Authentication </h2>
