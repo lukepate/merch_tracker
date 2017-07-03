@@ -13,11 +13,17 @@ PW: password
 
 <h2> Using </h2>
 <img src="http://i.imgur.com/ukupKKv.png"> 
-Add a tour
 
+Add a tour
 
 <img src="http://i.imgur.com/ZPgF40x.png">
 
+Nagivate to tour
+
+<img src="http://i.imgur.com/ZPgF40x.png">
+
+
+<img src="http://i.imgur.com/OcATK3h.png">
 ##Versions:
 Ruby version 2.3.2
 Rails version 5.0
