@@ -1,24 +1,19 @@
-# README
+README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Merch Tracker is a mobile reponsive app that allows artist and musicians to sign up, log in and catalog tours. Artist can seamlessly track merchandise sells, settlements and any other details for each individual date while also creating an archive of cities, venues and concert information. 
 
-Things you may want to cover:
+##Versions:
+Ruby version 2.3.2
+Rails version 5.0
 
-* Ruby version
+##Gems used: User Authentication
+gem 'devise'
 
-* System dependencies
+##Styling 
+Bootstrap 
 
-* Configuration
+##Testing
+gem 'rspec-rails'
+gem 'byebug'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Heroku This project is hosted on Heroku, <a href="##Heroku This project is hosted on Heroku, here"> Here</a>
