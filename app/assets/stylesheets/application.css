@@ -126,9 +126,11 @@ nav{
   margin-top: -60px;
   width: 100%;
   height: 30%;
+}
+.shirt-name{
+  margin-top: -20px;
 
 }
-
 
 @media screen and (max-width: 699px) and (min-width: 220px) {
     h2 {
