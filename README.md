@@ -13,6 +13,10 @@ PW: password
 
 <h2> Using </h2>
 <img src="http://i.imgur.com/ukupKKv.png"> 
+Add a tour
+
+
+<img src="http://i.imgur.com/ZPgF40x.png">
 
 ##Versions:
 Ruby version 2.3.2
