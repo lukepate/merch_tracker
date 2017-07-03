@@ -11,6 +11,8 @@ PW: password
 1. Fork and Clone repo.
 2. Bundle Install dependencies
 
+<h2> Using </h2>
+<img src="http://i.imgur.com/ukupKKv.png"> 
 
 ##Versions:
 Ruby version 2.3.2
@@ -26,7 +28,3 @@ Bootstrap
 gem 'rspec-rails'
 gem 'byebug'
 
-##Heroku This project is hosted on Heroku, <a href="##Heroku This project is hosted on Heroku, here"> Here</a>
-You can test the app with:
-Username: test@test.com
-PW: password
