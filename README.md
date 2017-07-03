@@ -27,17 +27,17 @@ Select tour date and add merchandise sells
 <img src="http://i.imgur.com/10Oskwy.png">
 
 
-##Versions:
-Ruby version 2.3.2
+<h2> Versions </h2>
+Ruby version 2.3.2<br>
 Rails version 5.0
 
-##User Authentication
+<h2> User Authentication </h2>
 gem 'devise'
 
-##Styling 
+<h2> Styling </h2>
 Bootstrap 
 
-##Testing
+<h2> Testing </h2>
 gem 'rspec-rails'
 gem 'byebug'
 
